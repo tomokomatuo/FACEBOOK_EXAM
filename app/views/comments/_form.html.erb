@@ -10,9 +10,9 @@
       </div>
     <% end %>
     <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image , class: "image"%>
     <%= image_tag(@comment.image.url) if @comment.image && @comment.image.url %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "input" %>
     <%= form.hidden_field :image_cache %>
     </div>
     <div class="comment_title">
