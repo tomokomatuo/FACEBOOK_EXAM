@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :show, :edit]
+  before_action :set_comment, only: [:update, :show, :edit, :destroy]
   
   def index
-    @comment = Comment.all
+    @comments = Comment.all
   end
   
   def new
@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
   
   private
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :image, :image_cache)
   end
   
   def set_comment

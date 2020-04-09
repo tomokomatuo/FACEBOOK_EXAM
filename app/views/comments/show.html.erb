@@ -1,2 +1,9 @@
 <h1>投稿詳細画面</h1>
-<p>コメント:<%= comment.content %></p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @comment.image.url %>
+</p>
+<p>コメント:<%= @comment.content %></p>
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

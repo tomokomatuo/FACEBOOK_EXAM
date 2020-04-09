@@ -9,11 +9,19 @@
         </ul>
       </div>
     <% end %>
+    <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@comment.image.url) if @comment.image && @comment.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+    </div>
     <div class="comment_title">
       <%= form.label :content %>
       <%= form.text_field :content %>
     </div>
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   <% end %>
   <%= link_to "投稿一覧画面にもどる", comments_path %>
    
