@@ -1,0 +1,16 @@
+<h1>投稿一覧</h1>
+　<p><%= notice %></p>
+  <table>
+    <tr>
+     <th>コメント</th>
+    </tr>
+  <% @comments.each do |comment| %>
+    <tr>
+     <td><%= comment.content %></td>
+     <td><%= link_to '詳細を確認する', comment_path(comment.id) %></td>
+     <td><%= link_to '投稿を編集する', edit_comment_path(comment.id) %></td>
+     <td><%= link_to '投稿を削除する', comment_path(comment.id), method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+    </tr>
+  <% end %>
+  </table>
+  <% link _to '新しくブログを投稿する', new_comments_path %>
