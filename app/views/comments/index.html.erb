@@ -6,7 +6,7 @@
     </tr>
   <% @comments.each do |comment| %>
     <tr>
-     <td><%= comment.image %></td>
+     <td><%= image_tag comment.image %></td>
      <td><%= comment.content %></td>
      <td><%= link_to '詳細を確認する', comment_path(comment.id) %></td>
      <td><%= link_to '投稿を編集する', edit_comment_path(comment.id) %></td>
